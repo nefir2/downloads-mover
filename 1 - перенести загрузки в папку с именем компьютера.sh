@@ -13,10 +13,6 @@ if [ ! -e $inp ]; then
 	touch $inp;
 	echo "$inp didn't exist. created it.";
 fi
-exec 0< $inp; #перенаправление ввода/вывода в соответствующие файлы
-exec 1> $ld;
-exec 2> $le;
-
 if [ ! -s $inp ]; then #проверка на пустоту файла ввода.
 	echo "n" > $inp;
 	echo "file was empty. added \"n\" in $inp";
@@ -26,6 +22,10 @@ if [ ! -s $inp ]; then #проверка на пустоту файла ввод
 #		echo "$inp contained not a y/n. added \"n\" in it.";
 #	fi
 fi
+
+exec 0< $inp; #перенаправление ввода/вывода в соответствующие файлы
+exec 1> $ld;
+exec 2> $le;
 
 mkdir ./`uname -n`;
 mv -vi ~/downloads/* ./`uname -n`/;
