@@ -18,8 +18,7 @@
 	#эта строка выводится в файл log-errors.txt
 	mv: overwrite '//26k-10-dc10/studocredir/UC33_9/Мои документы/.c-users-uc33_9-downloads/10-20-04/Caramell_-_Caramelldansen_Original_Swedish_Pitched_68955378.mp3'? y
 	#значение принятия решения для этой строки берётся из файла INPUT.TXT
-	
-	#файл: https://ru.hitmotop.com/song/68955378
+
 	#эти строки выводятся в log-dones.txt
 	copied '/c/Users/UC33_9/downloads/Caramell_-_Caramelldansen_Original_Swedish_Pitched_68955378.mp3' -> '//26k-10-dc10/studocredir/UC33_9/Мои документы/.c-users-uc33_9-downloads/10-20-04/Caramell_-_Caramelldansen_Original_Swedish_Pitched_68955378.mp3'
 
