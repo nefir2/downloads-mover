@@ -1,17 +1,21 @@
-export ld="./logs/log-dones.txt";
-export le="./logs/log-errors.txt";
+export ld="./logs/"`uname -n`"_log-imports.txt";
+export le="./logs/"`uname -n`"_log-errors.txt";
 export inp="./INPUT.TXT";
 if [ ! -d ./logs ]; then #создание папки "logs", если она не существует
 	mkdir logs;
 	echo "created ./logs/";
+fi
+if [ ! -e $ld ]; then
 	touch $ld;
 	echo "created $ld";
+fi
+if [ ! -e $le ]; then
 	touch $le;
 	echo "created $le";
 fi
 if [ ! -e $inp ]; then
 	touch $inp;
-	echo "$inp didn't exist. created it.";
+	echo "created $inp";
 fi
 if [ ! -s $inp ]; then #проверка на пустоту файла ввода.
 	echo "n" > $inp;
