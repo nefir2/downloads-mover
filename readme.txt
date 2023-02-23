@@ -11,17 +11,3 @@
 
 в файл %номер компьютера%_log-imports.txt записывается информация в процессе переноса файлов в программе №1.
 в файл %номер компьютера%_log-errors.txt записываются ошибки в процессе выполнения этой программы.
-
-примеры логов########################################################################################
-
-пример строк с принятием решения:
-	#эта строка выводится в файл log-errors.txt
-	mv: overwrite '//26k-10-dc10/studocredir/UC33_9/Мои документы/.c-users-uc33_9-downloads/10-20-04/Caramell_-_Caramelldansen_Original_Swedish_Pitched_68955378.mp3'? y
-	#значение принятия решения для этой строки берётся из файла INPUT.TXT
-
-	#эти строки выводятся в log-imports.txt
-	copied '/c/Users/UC33_9/downloads/Caramell_-_Caramelldansen_Original_Swedish_Pitched_68955378.mp3' -> '//26k-10-dc10/studocredir/UC33_9/Мои документы/.c-users-uc33_9-downloads/10-20-04/Caramell_-_Caramelldansen_Original_Swedish_Pitched_68955378.mp3'
-
-	removed '/c/Users/UC33_9/downloads/Caramell_-_Caramelldansen_Original_Swedish_Pitched_68955378.mp3'
-
-########################################################################################
