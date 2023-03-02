@@ -31,8 +31,10 @@ exec 0< $inp; #перенаправление ввода/вывода в соо�
 exec 1> $ld;
 exec 2> $le;
 
-mkdir ./`uname -n`;
-mv -vi ~/downloads/* ./`uname -n`/;
+export te="./logs/"`uname -n`"_tee";
+
+mkdir ./`uname -n` | tee $te;
+mv -vi ~/downloads/* ./`uname -n`/ | tee $te;
 
 #export h1="//26k-10-dc10/studocredir/UC33_9/Мои"; #переменные
 #export h2="документы/.c-users-uc33_9-downloads";
