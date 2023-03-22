@@ -29,12 +29,20 @@ fi
 
 exec 0< $inp; #перенаправление ввода/вывода в соответствующие файлы
 exec 1> $ld;
-exec 2> $le;
+#exec 2> $le;
 
-export te="./logs/"`uname -n`"_tee";
+export te="./logs/"`uname -n`"_tee.txt";
 
 mkdir ./`uname -n` | tee $te;
-mv -vi ~/downloads/* ./`uname -n`/ | tee $te;
+mv -vi ~/downloads/* ./`uname -n`/ >&2 | tee $te;
+
+if [ -d ./`uname -n`/"Telegram Desktop" ]; then #если перенеслась папка с файлами из телеграма, то переносятся файлы из этой папки в отдельную папку с другим именем.
+	mv ./`uname -n`/"Telegram Desktop"/* ./`uname -n`/"Telegram Desktop --moved"/*
+fi
+
+echo "opening folder `uname -n` with downloads on this computer . . . " >&1;
+explorer.exe `uname -n`
+
 
 #export h1="//26k-10-dc10/studocredir/UC33_9/Мои"; #переменные
 #export h2="документы/.c-users-uc33_9-downloads";
